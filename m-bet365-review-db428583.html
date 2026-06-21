@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>日常查询与对照 | bet365 信息参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #1a2e3f;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-bottom: 1px solid #cde0e6;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #0f6c7a;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2f5665;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0f6c7a;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero 段落 — 轻量、温和 */
+        .hero-tag {
+            margin-top: 2.2rem;
+            padding: 1.8rem 1.2rem;
+            background: linear-gradient(145deg, #e3f0f3 0%, #d1e4ea 100%);
+            border-radius: 24px;
+            box-shadow: 0 6px 12px rgba(30, 80, 90, 0.06);
+        }
+
+        .hero-tag h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #104a55;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-tag p {
+            font-size: 1rem;
+            max-width: 680px;
+            color: #1f4755;
+        }
+
+        .hero-tag .inline-link {
+            color: #0f6c7a;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #70b8c9;
+        }
+
+        .hero-tag .inline-link:hover {
+            text-decoration-color: #0f6c7a;
+        }
+
+        /* 三个场景卡片网格 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .scene-card {
+            flex: 1 1 260px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 8px 24px rgba(30, 85, 100, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #dbeaef;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 30px rgba(0, 60, 70, 0.07);
+            border-color: #b2d3dd;
+        }
+
+        .scene-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #115a67;
+            margin: 0.4rem 0 0.5rem;
+        }
+
+        .scene-card p {
+            font-size: 0.92rem;
+            color: #2b4f5c;
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-card .small-note {
+            font-size: 0.8rem;
+            color: #4d7988;
+            border-left: 3px solid #b5d3dc;
+            padding-left: 0.6rem;
+        }
+
+        /* 常见说明 — 类似 FAQ 摘要，但不用传统问答格式 */
+        .faq-block {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.8rem 1.6rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 18px rgba(25, 70, 80, 0.04);
+            border: 1px solid #d4e4ea;
+        }
+
+        .faq-block h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: #104a55;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .faq-item .marker {
+            background: #d1e4eb;
+            color: #0b5b6a;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .faq-item .text {
+            flex: 1;
+        }
+
+        .faq-item .text strong {
+            color: #115a67;
+            font-weight: 600;
+        }
+
+        .faq-item .text p {
+            margin-top: 0.1rem;
+            color: #2a4f5e;
+            font-size: 0.93rem;
+        }
+
+        /* 延伸阅读 / 提示区域 */
+        .extra-note {
+            background: #e7f2f5;
+            border-radius: 28px;
+            padding: 1.6rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border: 1px solid #b7d3dd;
+        }
+
+        .extra-note .left {
+            flex: 2 1 240px;
+        }
+
+        .extra-note .left h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #104a55;
+        }
+
+        .extra-note .left p {
+            color: #245663;
+            font-size: 0.9rem;
+        }
+
+        .extra-note .right {
+            flex: 1 1 140px;
+            text-align: right;
+        }
+
+        .extra-note .right .ref-link {
+            background: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #0f6c7a;
+            text-decoration: none;
+            border: 1px solid #8bbdcb;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .extra-note .right .ref-link:hover {
+            background: #cbe2e9;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            margin-top: 2.2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5f8391;
+            border-top: 1px solid #cde0e6;
+            padding-top: 1.5rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 0.75rem 2.5rem;
+            }
+
+            .hero-tag h1 {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .scene-card {
+                flex: 1 1 100%;
+            }
+
+            .faq-item {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .extra-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .extra-note .right {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <nav class="nav">
+        <span class="nav-brand">参考索引</span>
+        <div class="nav-links">
+            <a href="#scene">场景</a>
+            <a href="#faq">说明</a>
+            <a href="#extra">延伸</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- hero 段落：从日常查询和对照切入 -->
+        <div class="hero-tag">
+            <h1>日常查询·对照·延伸</h1>
+            <p>
+                无论你是初次注意到这个平台，还是希望从不同角度了解其服务逻辑，这里整理了一些客观内容供你参考。
+                在信息习惯中，<a href="https://m--bet365.com" class="inline-link">bet365</a> 是一个常被提及的名字，不论是在移动端浏览还是桌面端对照，其界面与功能都保持着一定的延续性。
+                下面的模块从三个常见使用场景展开，同时附加了一些提炼后的说明，便于你快速建立认知框架。
+            </p>
+        </div>
+
+        <!-- 三个场景模块（卡片网格） -->
+        <div class="scene-grid" id="scene">
+            <div class="scene-card">
+                <span class="icon">📱</span>
+                <h3>移动端快速查</h3>
+                <p>在通勤或碎片时间里，通过手机浏览器直接打开 <a href="https://m--bet365.com" style="color:#0f6c7a; text-decoration:underline; text-underline-offset:2px;">bet365</a> 移动版，即可查看赛事列表、市场变化和账户概况。页面针对小屏优化，信息层级清晰。</p>
+                <div class="small-note">适合快速检索赔率、赛程和账户动态。</div>
+            </div>
+
+            <div class="scene-card">
+                <span class="icon">📊</span>
+                <h3>数据对照参考</h3>
+                <p>当需要对比不同赛事的盘口变化或历史数据时，使用桌面端或平板打开同一站点，利用多窗口或分屏对照，能更高效地完成信息整理。</p>
+                <div class="small-note">多终端同步登录，便于交叉验证。</div>
+            </div>
+
+            <div class="scene-card">
+                <span class="icon">🔍</span>
+                <h3>延伸阅读与归档</h3>
+                <p>部分用户习惯将 <a href="https://m--bet365.com" style="color:#0f6c7a; text-decoration:underline; text-underline-offset:2px;">bet365</a> 作为长期观察样本，记录其界面迭代、功能更新或规则调整。这种延伸阅读方式有助于形成更全面的使用经验。</p>
+                <div class="small-note">适合个人归档或轻度分析。</div>
+            </div>
+        </div>
+
+        <!-- 常见说明（FAQ 摘要样式） -->
+        <div class="faq-block" id="faq">
+            <h2>常见说明 · 摘要</h2>
+
+            <div class="faq-item">
+                <div class="marker">1</div>
+                <div class="text">
+                    <strong>关于账户与登录</strong>
+                    <p>首次使用时需完成注册及身份验证。移动端与桌面端账号互通，建议在安全网络环境下操作。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="marker">2</div>
+                <div class="text">
+                    <strong>界面语言与货币</strong>
+                    <p>平台支持多语言及多种货币显示，在设置中可根据偏好调整。汇率数据参考第三方服务，实时变动。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="marker">3</div>
+                <div class="text">
+                    <strong>功能模块分布</strong>
+                    <p>主要模块包括：体育赛事、实时数据、账户记录、偏好设置。每个模块的入口在底部导航或侧边栏中均可找到。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="marker">4</div>
+                <div class="text">
+                    <strong>网络与加载</strong>
+                    <p>建议使用稳定的网络连接，部分实时功能对延迟较敏感。若加载异常，可尝试刷新或切换网络环境。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 延伸阅读 / 提示区域 -->
+        <div class="extra-note" id="extra">
+            <div class="left">
+                <h3>延伸阅读 · 不带预设的观察</h3>
+                <p>如果你希望对 <a href="https://m--bet365.com" style="color:#0f6c7a; text-decoration:underline;">bet365</a> 的页面结构、导航逻辑或内容组织有更细致的了解，不妨从首页开始逐层浏览，同时对比其他同类服务。横向对照常常能带来新的视角。</p>
+            </div>
+            <div class="right">
+                <a href="https://m--bet365.com" class="ref-link">bet365</a>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer-note">
+            本页为独立信息整理，不构成任何引导或推荐。数据及功能以实际页面为准。
+        </div>
+
+    </div>
+
+</body>
+</html>
