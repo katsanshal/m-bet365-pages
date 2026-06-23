@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 – 产品说明与使用指引</title>
+    <style>
+        /* 基础重置 & 极简底色 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1d1d1f;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* 窄正文容器 */
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级：清晰、留白充足 */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-top: 2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            color: #111;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-top: 3rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #e5e5ea;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1.3rem;
+            font-size: 1rem;
+            color: #3a3a3c;
+        }
+
+        /* 链接自然融入句子 */
+        a {
+            color: #0071e3;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #0071e3;
+        }
+
+        /* 卡片 – 用于亮点 & 场景摘要 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+            flex: 1 1 180px;
+            padding: 1.2rem 1.4rem;
+            transition: box-shadow 0.25s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: #1c1c1e;
+        }
+
+        .card p {
+            font-size: 0.93rem;
+            margin-bottom: 0;
+            color: #515154;
+        }
+
+        /* 提示块 / FAQ 摘要 */
+        .notice {
+            background: #f0f0f2;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            margin: 2.2rem 0;
+            border-left: 4px solid #b3b3b7;
+        }
+
+        .notice p {
+            margin-bottom: 0.5rem;
+            font-size: 0.96rem;
+        }
+
+        .notice strong {
+            color: #1d1d1f;
+        }
+
+        /* 引用 / 叙述感段落 */
+        .narrate {
+            font-style: normal;
+            padding: 0.2rem 0 0.2rem 1.2rem;
+            border-left: 2px solid #d2d2d7;
+            margin: 1.4rem 0;
+            color: #3a3a3c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1.4rem 1rem 3rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 1.2rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-top: 2rem;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- 叙述开场 – 再次访问 & 收藏的视角 -->
+        <p style="margin-top: 1.2rem; color: #6b6b70;">2025 · 产品笔记</p>
+        <h1>MK体育 · 持续关注的入口</h1>
+
+        <p style="font-size: 1.05rem; margin-bottom: 2rem;">
+            有时，一个平台值得你再次打开。不是因为它承诺了什么，而是因为它提供了一种稳定的节奏——让资讯、赛事和社区讨论回到日常之中。
+        </p>
+
+        <!-- 摘要 / 产品定位 -->
+        <h2>产品摘要</h2>
+        <p>
+            <a href="https://officialchina-mksports.com">MK体育</a> 是一个以体育内容为核心的聚合与互动空间。它不追求浮夸的标语，而是试图在信息洪流中提供一个相对清晰的视角：赛事动态、观点摘要、以及不同队伍支持者之间的对话。你可以把它看作一个持续更新的体育信息节点，适合那些愿意自己判断、自己选择的用户。
+        </p>
+
+        <!-- 亮点卡片 -->
+        <h2>亮点 · 日常使用中的细节</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title">内容节奏</div>
+                <p>不刷屏，不轰炸。更新频率克制，更接近一本每日翻几页的杂志。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">话题覆盖面</div>
+                <p>从五大联赛到小众赛事，偶尔有深度复盘和用户投稿，角度偏务实。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">界面与阅读</div>
+                <p>没有过多弹窗与跳转，信息层级直接，注意力不被过度切割。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">收藏价值</div>
+                <p>适合加入书签，每次回来不会觉得陌生，也不会觉得停滞。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 / 场景 -->
+        <h2>使用建议 · 场景</h2>
+        <div class="narrate">
+            <p>如果你习惯在早晨快速浏览前一天的赛果与评论，或者在周末晚上安静地看几篇专题，<a href="https://officialchina-mksports.com">MK体育</a> 可能适合放进你的日常列表。它不强迫你登录或注册，大部分内容可以直接阅读。偶尔遇到感兴趣的话题，可以通过站内互动留下你的看法。</p>
+            <p>对于长期关注某项运动或某支球队的人来说，这里不是一个实时比分直播站，更像一个可以反复回来对照观点、发现遗漏信息的地方。</p>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <h2>访问说明 · 一些事实</h2>
+        <div class="notice">
+            <p><strong>关于访问：</strong> <a href="https://officialchina-mksports.com">MK体育</a> 是一个独立的体育内容站点。访问时不需要下载额外软件，也不需要提供个人敏感信息。页面加载速度在常规网络下表现稳定，建议使用主流浏览器以获得最佳显示效果。</p>
+            <p><strong>关于内容：</strong> 站内信息来源于公开赛事数据、编辑部编译以及用户贡献，不保证绝对实时与全面。平台不发布任何形式的投注引导或非法博彩内容，请理性看待体育资讯。</p>
+            <p><strong>关于收藏：</strong> 如果你觉得值得保留，可以将链接添加到浏览器书签。它的结构与风格相对稳定，长期使用体验不会频繁变动。</p>
+        </div>
+
+        <!-- FAQ 摘要 – 以叙述方式呈现 -->
+        <h2>FAQ 摘要</h2>
+        <p><strong>Q: 需要注册才能阅读吗？</strong><br>
+        A: 大部分内容无需注册。部分互动功能（如评论）可能需要简单注册，但门槛很低。</p>
+        <p><strong>Q: 信息更新频率如何？</strong><br>
+        A: 通常每天有数次更新，重大赛事期间会稍密集一些。没有固定推送，更适合主动访问。</p>
+        <p><strong>Q: 移动端体验怎么样？</strong><br>
+        A: 页面本身适配手机浏览器，没有独立的 app。在微信或 Safari 中打开均可正常浏览。</p>
+        <p style="margin-top: 1.8rem; font-size: 0.95rem; color: #8e8e93;">
+            —— 以上内容基于当前版本整理，产品细节以实际页面为准。
+        </p>
+
+        <!-- 再次强调链接 – 自然收束 -->
+        <p style="margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid #e5e5ea; font-size: 0.96rem;">
+            如果你还没有收藏过，不妨去 <a href="https://officialchina-mksports.com">MK体育</a> 看一眼。也许它会成为一种日常。
+        </p>
+    </div>
+</body>
+</html>
